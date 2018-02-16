@@ -12,8 +12,15 @@ package ejerciciobanco;
 public class Banco {
     public int numero;
     public int clave;
-    public float saldo;
+    public double saldo;
     public String Nombre;
+    
+    public Banco(int numeroC,int claveC,double saldoC,String NombreT){
+        numero = numeroC;
+        clave = claveC;
+        saldo = saldoC;
+        Nombre = NombreT;
+    }
     
     public void consignar(float suma){
         this.saldo += suma; 
@@ -21,5 +28,20 @@ public class Banco {
     
     public void retirar(float resta){
         this.saldo -= resta;
+    }
+    
+    public void cambiar(int clave){
+        this.clave = clave;
+    }
+    
+    public void consultar(){
+        System.out.println("El saldo actual de " + this.Nombre + " es: $" + this.saldo);
+    }
+    
+    public void info(){
+        System.out.println("Nombre del titular: " + this.Nombre +
+                           " Numero de cuenta: " + this.numero +
+                           " Clave: " + this.clave +
+                           " Saldo actual: " + this.saldo);
     }
 }
